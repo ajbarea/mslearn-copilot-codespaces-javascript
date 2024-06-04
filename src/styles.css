@@ -1,6 +1,6 @@
 /**
-* CSS file to hold styles that apply across the application
-*/
+ * CSS file to hold styles that apply across the application
+ */
 
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Montserrat:wght@200;400;600;800&display=swap");
 
@@ -40,7 +40,7 @@ section img.background {
   pointer-events: none;
   position: absolute;
   top: 0;
-  transform: translate(-50%, 0);
+  transform: translateX(-50%);
   width: 100vmax;
   z-index: -1;
 }
@@ -105,7 +105,7 @@ a:hover {
 .container {
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 330px 300px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 20px auto;
 }
 
@@ -122,4 +122,21 @@ a:hover {
 img.socialIcon {
   height: 30px;
   width: 30px;
+}
+
+/* add an amazing animation to the social icons */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+img.socialIcon:hover {
+  animation: bounce 0.5s;
 }
